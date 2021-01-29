@@ -36,11 +36,12 @@ These values have been adapted from the [International Association for Public Pa
 * Attempt‭ ‬collaboration‭ ‬before‭ ‬conflict.
 * Refrain‭ ‬from‭ ‬demeaning,‭ ‬discriminatory,‭ ‬or‭ ‬harassing‭ ‬behavior‭ ‬and‭ ‬speech.
 * Be‭ ‬mindful‭ ‬of‭ ‬your‭ ‬surroundings‭ ‬and‭ ‬of‭ ‬your‭ ‬fellow‭ ‬participants.‭ ‬Alert‭ project team members ‬if‭ ‬you‭ ‬notice‭ ‬a‭ ‬dangerous‭ ‬situation,‭ ‬someone‭ ‬in‭ ‬distress,‭ ‬or‭ ‬violations‭ ‬of‭ ‬this‭ ‬Code‭ ‬of‭ ‬Conduct,‭ ‬even‭ ‬if‭ ‬they‭ ‬seem‭ ‬inconsequential.
-‏
+
 # Unacceptable Behavior
 Unacceptable‭ ‬behaviors‭ ‬include:‭ ‬intimidating,‭ ‬harassing,‭ ‬abusive,‭ ‬discriminatory,‭ ‬derogatory‭ ‬or‭ ‬demeaning‭ ‬speech‭ ‬or‭ ‬actions‭ ‬by‭ ‬any‭ ‬participant‭ ‬in‭ ‬our‭ ‬community‭ ‬online,‭ ‬at‭ ‬all‭ ‬related‭ ‬events‭ ‬and‭ ‬in‭ ‬one-on-one‭ ‬communications‭ ‬carried‭ ‬out‭ ‬in‭ ‬the‭ ‬context‭ ‬of‭ GTFS-eligibilities ‬business.‭ 
 
 Harassment‭ ‬includes:‭ ‬harmful‭ ‬or‭ ‬prejudicial‭ ‬verbal‭ ‬or‭ ‬written‭ ‬comments‭ ‬related‭ ‬to‭ ‬gender,‭ ‬sexual‭ ‬orientation,‭ ‬race,‭ ‬religion,‭ ‬disability‭; ‬inappropriate‭ ‬use‭ ‬of‭ ‬nudity‭ ‬and/or‭ ‬sexual‭ ‬images‭ ‬in‭ ‬public‭ ‬spaces‭ (‬including‭ ‬presentation‭ ‬slides‭); ‬deliberate‭ ‬intimidation,‭ ‬stalking‭ ‬or‭ ‬following‭; ‬harassing‭ ‬photography‭ ‬or‭ ‬recording‭; ‬sustained‭ ‬disruption‭ ‬of‭ ‬talks‭ ‬or‭ ‬other‭ ‬events‭; ‬inappropriate‭ ‬physical‭ ‬contact,‭ ‬and‭ ‬unwelcome‭ ‬sexual‭ ‬attention.
+
 
 # Consequences of Unacceptable Behavior
 Unacceptable‭ ‬behavior‭ ‬from‭ ‬any‭ ‬community‭ ‬member,‭ ‬including‭ ‬those‭ ‬with‭ ‬decision-making‭ ‬authority,‭ ‬will‭ ‬not‭ ‬be‭ ‬tolerated.
