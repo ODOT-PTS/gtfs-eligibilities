@@ -3,9 +3,9 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: About This Project
 permalink: /
 ---
-# About This Project
 
 ## Making it easier for people to gain full access to specialized transportation services
 
@@ -19,5 +19,5 @@ This project will fill a pressing need for a standardized and computer-readable 
 
 An expert panel, with members from human services organizations, transit agencies, and transit software developers, will create GTFS-eligibilities as a new draft extension to the GTFS data standard. Once complete, the draft extension will be made available for adoption by implementers and ongoing oversight by the appropriate standards body. 
 
-This project is being carried out by Full Path Transit Technology, under contract with the Oregon Department of Transportation (ODOT), with funding from the Federal Transit Administration’s [Mobility for All Pilot Program](https://www.transit.dot.gov/funding/grants/grant-programs/mobility-all-pilot-program-grants). The effort is a continuation of ODOT’s ongoing work to support the accessibility and usefulness of transit services through open data and address equity goals laid out in the Oregon Public Transportation Plan.
+This project is being carried out by [Full Path Transit Technology](https://fullpath.io), under contract with the Oregon Department of Transportation (ODOT), with funding from the Federal Transit Administration’s [Mobility for All Pilot Program](https://www.transit.dot.gov/funding/grants/grant-programs/mobility-all-pilot-program-grants). The effort is a continuation of ODOT’s ongoing work to support the accessibility and usefulness of transit services through open data and address equity goals laid out in the [Oregon Public Transportation Plan](https://www.oregon.gov/ODOT/Planning/Documents/OPTP-OTC-Draft-2018.pdf).
 
