@@ -7,6 +7,7 @@ permalink: /panel-members/
 <style>
   iframe{
     width: 600px;
+    height: 100%
   }
   </style>
 
