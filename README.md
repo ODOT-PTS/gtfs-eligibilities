@@ -1,3 +1,5 @@
+# GTFS-eligibilities and GTFS-capabilities
+
 GTFS-eligibilities and GTFS-capabilities are new data standards in development. When complete, they will describe the many factors that can determine access to transit services, particularly specialized transportation services.
 
 These standards will fill a pressing need for a standardized and computer-readable ways to describe rider eligibility and service provider capability. GTFS-eligibilities will deal with how a person’s individual characteristics (e.g., age, disability status, residence, employment, or registration in a program) may affect their access to public transportation services. GTFS-capabilities will describe a transportation provider’s ability to meet a rider’s needs (e.g., whether the provider offers services such as door-to-door service, door-through-door service, stretcher service, mobility device accommodation, and bariatric capability). Such information is currently available to the public in analog or one-off digital formats only. This absence creates a range of unnecessary difficulties:
