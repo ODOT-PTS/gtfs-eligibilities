@@ -1,4 +1,4 @@
-# GTFS-eligibilities
+# GTFS-capabilities
 
 ### Goals
 
