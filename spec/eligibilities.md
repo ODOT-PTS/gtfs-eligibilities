@@ -1,4 +1,5 @@
-# GTFS-eligibilities
+## GTFS-eligibilities
+
 
 ### Goals
 
@@ -6,19 +7,14 @@ Describes the limitations on types and groups of people who may book a trip or b
 
 GTFS-eligibilities is formed around the concept that it should provide a manner for systems operating based on user accounts to understand whether a trip is eligible based on user account information. This means the fields proposed provide:
 
-
-
-*   Common attributes associated with user accounts such as age, gender, company affiliation, trip purposes, and assistance levels provided.
-*   Customizable authentications of locally-defined attributes and statuses. Custom eligibilities are provided, as well as a way to understand how the custom eligibility can be authenticated.
-
+* Common attributes associated with user accounts such as age, gender, company affiliation, trip purposes, and assistance levels provided.
+* Customizable authentications of locally-defined attributes and statuses. Custom eligibilities are provided, as well as a way to understand how the custom eligibility can be authenticated.
 
 ### Requirements
 
-[None. Extends the core CSV GTFS.] 
-
+Extends **[GTFS-RiderCategories](https://docs.google.com/document/d/19j-f-wZ5C_kYXmkLBye1g42U-kvfSVgYLkkG5oyBauY/edit#heading=h.9gqyl4w7f6x1)**
 
 ### Files extended or added
-
 
 <table>
   <tr>
@@ -34,7 +30,7 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
    <td>Extended
    </td>
-   <td>Adds reference to <code>eligibility_id</code>
+   <td>Adds reference to <code>rider_category_id</code>
    </td>
   </tr>
   <tr>
@@ -42,7 +38,7 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
    <td>Extended
    </td>
-   <td>Adds reference to <code>eligibility_id</code>, which overrides assignment on routes
+   <td>Adds reference to <code>rider_category_id</code>, which overrides assignment on routes
    </td>
   </tr>
   <tr>
@@ -50,29 +46,38 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
    <td>Extended
    </td>
-   <td>Adds reference to <code>eligibility_id</code>, which overrides assignment on trips and routes
+   <td>Adds reference to <code>rider_category_id</code>, which overrides assignment on trips and routes
    </td>
   </tr>
   <tr>
-   <td><code>eligibilities.txt</code>
+   <td><code>rider_categories.txt</code>
    </td>
-   <td>Added
+   <td>Extended
    </td>
-   <td>Provides fields to define various eligibility restrictions.
+   <td>Adds fields to define various eligibility restrictions
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn_sets.txt</code>
+   </td>
+   <td>Created
+   </td>
+   <td>Adds ability for a rider category to reference URNs for purposes of describing allowed trip purposes, rider eligibility, and legal compliance
+   </td>
+  </tr>
+  <tr>
+   <td><code>urns.txt</code>
+   </td>
+   <td>Created
+   </td>
+   <td>Provides additional information related to Uniform Resource Names (URNs)
    </td>
   </tr>
 </table>
-
-
-
-### 
-
 
 ### File Definitions
 
-
 #### routes.txt (file extended)
-
 
 <table>
   <tr>
@@ -82,18 +87,15 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_id</code>
+   <td><code>rider_category_id</code>
    </td>
-   <td>(ID, <strong>Optional</strong>) Identifies an eligibility restriction in effect for the route.
+   <td>(ID, <strong>Optional</strong>) Identifies a rider category eligible for the route.
    </td>
   </tr>
 </table>
-
-
 
 #### trips.txt (file extended)
 
-
 <table>
   <tr>
    <td><strong>Field Name</strong>
@@ -102,18 +104,15 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_id</code>
+   <td><code>rider_category_id</code>
    </td>
-   <td>(ID, <strong>Optional</strong>) Identifies an eligibility restriction in effect for the trip.
+   <td>(ID, <strong>Optional</strong>) Identifies a rider category eligible for the trip. Value overrides assignment on <code>routes.rider_category_id</code>.
    </td>
   </tr>
 </table>
-
-
 
 #### stop_times.txt (file extended)
 
-
 <table>
   <tr>
    <td><strong>Field Name</strong>
@@ -122,17 +121,14 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_id</code>
+   <td><code>rider_category_id</code>
    </td>
-   <td>(ID, <strong>Optional</strong>) Identifies an eligibility restriction in effect for the stop_time.
+   <td>(ID, <strong>Optional</strong>) Identifies a rider category eligible for the stop_time. Value overrides assignment on <code>trips.rider_category_id</code> and <code>routes.rider_category_id</code>.
    </td>
   </tr>
 </table>
 
-
-
-#### eligibilities.txt (file added)
-
+#### rider_categories.txt (file extended)
 
 <table>
   <tr>
@@ -142,41 +138,16 @@ GTFS-eligibilities is formed around the concept that it should provide a manner 
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_id</code>
+   <td><code>rider_category \
+_desc</code>
    </td>
-   <td>(ID, <strong>Required</strong>) Identifies an eligibility restriction. An eligibility restriction describes a group of people who can ride a service. An <code>eligibility_id</code> can appear on multiple lines of <code>eligibilities.txt</code>, indicating that multiple groups of people are eligible for the service.
-   </td>
-  </tr>
-  <tr>
-   <td><code>eligibility_name</code>
-   </td>
-   <td>(Text, <strong>Optional</strong>) if an eligibility does not fit into one of the other eligibility.txt field descriptions, then the <code>custom_eligibility_name </code>field should provide a short (up to 25 characters) name describing the eligibility, for use in customer facing apps.
-<p>
-For example, if a service is for those registered in Medicaid, the <code>custom_eligibility_name</code> could be “Medicaid recipients”. A custom eligibility could also be a company affiliation, like “OSU community members” or “OSU employees”.
-   </td>
-  </tr>
-  <tr>
-   <td><code>eligibility_desc</code>
-   </td>
-   <td>(Text, <strong>Optional</strong>) Description of all elements of the eligibility restriction, including age, trip purpose, and other factors.
-   </td>
-  </tr>
-  <tr>
-   <td><code>min_age</code>
-   </td>
-   <td>(Non-negative integer, <strong>Optional</strong>) Indicates all riders this age or older are eligible.
-   </td>
-  </tr>
-  <tr>
-   <td><code>max_age</code>
-   </td>
-   <td>(Non-negative integer, <strong>Optional</strong>) Indicates all riders this age or younger are eligible.
+   <td>(Text, <strong>Optional</strong>) Description of all elements of the rider category, including age, trip purpose, and other factors.
    </td>
   </tr>
   <tr>
    <td><code>trip_purpose</code>
    </td>
-   <td>(Enum, <strong>Optional</strong>) Indicates a rider purpose eligible for this service.
+   <td>(Enum, <strong>Optional</strong>) Indicates a trip purpose eligible for this service, where the purpose describes the primary activity at the destination the rider is going to or returning from.
 <p>
 0 or blank - All rider purposes are allowed on this service.
 <p>
@@ -190,17 +161,9 @@ For example, if a service is for those registered in Medicaid, the <code>custom_
    </td>
   </tr>
   <tr>
-   <td><code>trip_purpose_urns</code>
+   <td><code>trip_purpose_ urn_set_id</code>
    </td>
-   <td>(Text, <strong>Optional</strong>) Uniform Resource Names (URNs) providing detailed identifiers for trip purposes. URNs must be separated by one or more spaces or newline characters. If more than one URN is provided, any is allowed for a given trip.
-<p>
-Examples: 
-<p>
-urn:gtfs:trip-purpose:us:federal:va:vts:medical
-<p>
-urn:gtfs:trip-purpose:us:federal:medicaid:state:oregon:medical
-<p>
-urn:gtfs:trip-purpose:us:state:oregon:org:ride.connection:recreation
+   <td>(ID referencing <code>urn_sets.urn_set_id</code>, <strong>Optional</strong>) URN set referencing one or more URNs describing allowed trip purposes. If more than one trip purpose URN is provided in the set, a qualifying rider trip must match any one or more of the listed trip purposes.
    </td>
   </tr>
   <tr>
@@ -216,39 +179,31 @@ urn:gtfs:trip-purpose:us:state:oregon:org:ride.connection:recreation
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_urns</code>
+   <td><code>eligibility_ urn_set_id</code>
    </td>
-   <td>(Text, <strong>Optional</strong>) One or more uniform resource names (URNs) providing detailed identifiers for eligibility. URNs must be separated by one or more spaces or newline characters. If more than one URN is provided, the rider must be eligible for each and every factor described by the URNs.
-<p>
-Examples:
-<p>
-urn:gtfs:eligibility:us:va:veteran
-<p>
-urn:gtfs:eligibility:us;oregon:odva:veteran
-<p>
-urn:gtfs:eligibility:us;oregon;org:ride.connection:veteran
-<p>
-urn:gtfs:eligibility:us;oregon;multnomah.county:ads:case-managed
-<p>
-urn:gtfs:eligibility:us;oregon;lane.transit.district:low-income
+   <td>(ID referencing <code>urn_sets.urn_set_id</code>, <strong>Optional</strong>) URN set referencing one or more URNs providing detailed identifiers for eligibility. If more than one URN is provided in the set, the rider must be eligible for all factors described by the entire set of URNs.
    </td>
   </tr>
   <tr>
-   <td><code>eligibility_authentication</code>
+   <td><code>eligibility_ authentication</code>
    </td>
    <td>(Enum, <strong>Optional</strong>) Indicates the manner in which qualification for eligibility will be determined.
 <p>
-0 - Eligibility is authenticated onboard at no particular time.
+0 or blank - Eligibility is authenticated onboard at no particular time.
 <p>
-1 or blank - Eligibility is authenticated at time of boarding.
+1 - Eligibility is authenticated at time of boarding.
 <p>
-2 - Eligibility is authenticated online via an <code>authentication_url</code>
-<p>
-3 - Eligibility is authenticated at time of booking, without an <code>authentication_url</code>
+2 - Eligibility is authenticated at time of booking.
    </td>
   </tr>
   <tr>
-   <td><code>registration_url</code>
+   <td><code>registration_ desc</code>
+   </td>
+   <td>(Text, <strong>Optional</strong>) Description of how a rider may establish eligibility for the service.
+   </td>
+  </tr>
+  <tr>
+   <td><code>registration_ url</code>
    </td>
    <td>(Text, <strong>Optional</strong>) URL where a rider may register to establish eligibility for the service.
    </td>
@@ -260,43 +215,89 @@ urn:gtfs:eligibility:us;oregon;lane.transit.district:low-income
    </td>
   </tr>
   <tr>
-   <td><code>authentication_param_name</code>
+   <td><code>appeal_url</code>
    </td>
-   <td>(Text, <strong>Conditionally required</strong>) The name of the parameter that a value can be passed to through the <code>authentication_url</code> in order to authenticate a particular user during the online booking process.  
-<ul>
-
-<li><strong>Required</strong>, if the eligibility has an <code>authentication_url</code>
-
-<li><strong>Forbidden</strong> otherwise
-</li>
-</ul>
+   <td>(Text, <strong>Optional</strong>) URL where a rider may appeal a determination regarding this eligibility.
    </td>
   </tr>
   <tr>
-   <td><code>authentication_url</code>
+   <td><code>appeal_phone</code>
    </td>
-   <td>(Text, <strong>Conditionally required</strong>) The url that can be utilized in order to authenticate a particular user during the online booking process, along with an <code>authentication_param_name</code>.  
-<ul>
-
-<li><strong>Required</strong>, if the eligibility has an <code>authentication_param_name</code>
-
-<li><strong>Forbidden</strong> otherwise
-</li>
-</ul>
+   <td>(Text, <strong>Optional</strong>) Phone number where a rider may appeal a determination regarding this eligibility.
    </td>
   </tr>
   <tr>
-   <td><code>compliance_urns</code>
+   <td><code>compliance_urn _set_id</code>
    </td>
-   <td>(Text, <strong>Optional</strong>) One or more uniform resource names (URNs) providing detailed identifiers for laws the eligibility is intended to fulfill. URNs must be separated by one or more spaces or newline characters. If more than one URN is provided, the eligibility fulfill must be eligible for each and every URNs. 
-<p>
-Examples:
-<p>
-urn:gtfs:compliance:us:1990-07-26;ada
-<p>
-urn:gtfs:compliance:us;oregon;oregon.city:ordinance:2020-06-15;13.30.070
+   <td>(ID referencing <code>urn_sets.urn_set_id</code>, <strong>Optional</strong>) URN set referencing one or more URNs providing detailed identifiers for laws or regulations the eligibility is intended to comply with. If more than one URN is provided in the set, the eligibility must comply with all laws or regulations identified by the URNs.
    </td>
   </tr>
 </table>
 
+#### urn_sets.txt (optional file, added)
 
+<table>
+  <tr>
+   <td><strong>Field Name</strong>
+   </td>
+   <td><strong>Details</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn_set_id</code>
+   </td>
+   <td>(ID, <strong>Required</strong>) Identifies a set of URNs to be used together. Multiple entries in <code>urn_sets.txt</code> may share the same <code>urn_set_id</code>.
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn</code>
+   </td>
+   <td>(URN,  <strong>Required</strong>) A single uniform resource name.
+   </td>
+  </tr>
+  <tr>
+   <td><code>reverse_test</code>
+   </td>
+   <td>(Enum, <strong>Optional</strong>) If the URN is being used in a true/false test for equality, indicates that the result of the test should be reversed (the same as using a “not” operator).
+<p>
+0 or blank - Result of test is not reversed (true returns true, false returns false)
+<p>
+1 - Result of test is reversed (true returns false, false returns true)
+   </td>
+  </tr>
+</table>
+
+#### urns.txt (optional file, added)
+
+<table>
+  <tr>
+   <td><strong>Field Name</strong>
+   </td>
+   <td><strong>Details</strong>
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn</code>
+   </td>
+   <td>(URN referencing <code>urn_sets.urn</code>, <strong>Required</strong>) A single uniform resource name.
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn_name</code>
+   </td>
+   <td>(Text, <strong>Optional</strong>) A short name corresponding to a URN that may be displayed to the rider. 
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn_desc</code>
+   </td>
+   <td>(Text, <strong>Optional</strong>) A more detailed description corresponding to a URN.
+   </td>
+  </tr>
+  <tr>
+   <td><code>urn_url</code>
+   </td>
+   <td>(URL, <strong>Optional</strong>) URL for more detailed information corresponding to a URN.
+   </td>
+  </tr>
+</table>
