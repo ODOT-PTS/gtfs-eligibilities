@@ -4,9 +4,9 @@ Uniform Resource Names (URNs) are identifiers that are globally unique, human-re
 
 Global uniqueness is achieved through a series of nested namespaces joined by the colon character (“:”) beginning with `urn` and followed by a namespace identifier (NID). The proposed NID for URNs within the GTFS is `gtfs`, resulting in the first portion of a URN being `urn:gtfs:`. This formatting, with the use of colons to separate terms, is required by the URN standard. Formatting after these terms, including use of colons and other term separators, is at the discretion of the GTFS standards development process. What follows are two recommended formats based on research into other URN schemes.
 
-urn:gtfs:{entity type}:{jurisdiction names}:{organization name}:{entity name}
+`urn:gtfs:{entity type}:{jurisdiction names}:{organization name}:{entity name}`
 
-urn:gtfs:compliance:{jurisdiction names}:{organization name}:{type of law}:{name of law}
+`urn:gtfs:compliance:{jurisdiction names}:{organization name}:{type of law}:{name of law}`
 
 The entity type corresponds with the type of field being described. In the GTFS-eligibilities extension, URNs are used to identify trip purposes, eligibility constraints, and regulatory compliance. Accordingly the proposed entity types are “trip.purpose”, “eligibility”, and “compliance”.
 
