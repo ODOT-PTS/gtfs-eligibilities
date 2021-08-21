@@ -20,10 +20,7 @@ For compliance URNs, this specification recommends adhering to format laid out i
 
 Examples of LEX URNs for US laws are available from the [Legal Information Institute](https://www.law.cornell.edu/wiki/lexcraft/urn_lex_illustrative_examples) at the Cornell Law School.
 
-
 ## Example URNs
-
-
 
 * Trip purposes
     * `urn:gtfs:trip.purpose:us;oregon;org:ride.connection:recreation;non-specific`
@@ -39,7 +36,6 @@ Examples of LEX URNs for US laws are available from the [Legal Information Insti
     * `urn:gtfs:eligibility:us;oregon;lane.transit.district:lane.county.resident`
 * Compliance
     * `urn:gtfs:compliance:us:federal:session.law:1990-07-26;pl.101-336,104.stat.327` (Americans with Disabilities Act)
-
 
 ## Namespace Identifier Registration
 
