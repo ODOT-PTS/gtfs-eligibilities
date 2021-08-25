@@ -22,8 +22,8 @@ Extends **[GTFS-RiderCategories](https://docs.google.com/document/d/19j-f-wZ5C_k
 |`trips.txt`|Extended|Adds reference to `rider_category_id`, which overrides assignment on routes|
 |`stop_times.txt`|Extended|Adds reference to `rider_category_id`, which overrides assignment on trips and routes|
 |`rider_categories.txt`|Extended|Adds fields to define various eligibility restrictions|
-|`urn_sets.txt`|Created|Adds ability for a rider category to reference URNs for purposes of describing allowed trip purposes, rider eligibility, and legal compliance|
-|`urns.txt`|Created|Provides additional information related to Uniform Resource Names (URNs)|
+|`urn_sets.txt`|Added|Adds ability for a rider category to reference URNs for purposes of describing allowed trip purposes, rider eligibility, and legal compliance|
+|`urns.txt`|Added|Provides additional information related to Uniform Resource Names (URNs)|
 
 ## File Definitions
 
