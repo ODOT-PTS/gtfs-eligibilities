@@ -11,3 +11,7 @@ These standards will fill a pressing need for a standardized and computer-readab
 An expert panel, with members from human service organizations, transit agencies, and transit software companies, will create proposals for GTFS-eligibilities and GTFS-capabilities as new draft extensions to the General Transit Feed Specification (GTFS) data standard. The panel’s work centers on ensuring that the standards being defined meet the needs of riders and the agencies that serve them, while also being technically sound. Once complete, the draft extensions will be made available for continued refinement and ultimately adoption by implementers and ongoing oversight by the appropriate standards body.
 
 This project is being carried out by Full Path Transit Technology, under contract with the Oregon Department of Transportation (ODOT), with funding from the Federal Transit Administration’s Mobility for All Pilot Program. The effort is a continuation of ODOT’s ongoing work to support the accessibility and usefulness of transit services through open data and address equity goals laid out in the Oregon Public Transportation Plan. 
+
+On August 25, Kevin Chambers of Full Path Transit Technology presented a webinar this project, sharing project findings and discussing the challenges, how this work will continue, and how it can benefit transit agencies’ in providing specialized transportation services.
+
+The webinar recording is available here: https://www.youtube.com/watch?v=NsfMdNKkzOA
